@@ -1,0 +1,12 @@
+.navbar {
+    background: rgb(6,84,113);
+    background: linear-gradient(90deg, rgba(6,84,113,1) 25%, rgba(9,132,177,1) 50%);
+    box-shadow: 0.5rem rgba(0, 0, 0, 0.15);
+}
+
+.nav-link{
+    color: #fcbe45 !important;
+    &:hover {
+        font-weight: bold;
+      }
+}

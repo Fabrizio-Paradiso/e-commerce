@@ -1,7 +1,8 @@
 import React from 'react'
 import {MenuItems} from "./MenuItems"
-import logo from '../../logo.png'
 import './NavBar.scss'
+import logo from '../../imgs/icons/logo.png'
+import { CartWidget } from '../CartWidget/CartWidget'
 
 export const NavBar = () => {
     return (
@@ -23,6 +24,9 @@ export const NavBar = () => {
               )
               })}
             </ul>
+          </div>
+          <div className='cart-widget'>
+            <CartWidget/>
           </div>
         </div>
       </nav>

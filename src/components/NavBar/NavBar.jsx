@@ -1,35 +1,37 @@
-import React from 'react'
-import {MenuItems} from "./MenuItems"
-import './NavBar.scss'
-import logo from '../../imgs/icons/logo.png'
-import { CartWidget } from '../CartWidget/CartWidget'
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
+import Container from 'react-bootstrap/Container'
+import logo from '../../imgs/icons/logo.svg'
+import { CartWidget } from './CartWidget'
 
-export const NavBar = () => {
+function NavBar () {
     return (
-      <nav className='navbar navbar-expand-lg justify-content-between' id="navbar">
-        <div className='container-fluid'>
-          <div className='navbar-brand w-25'>
-            <img className='w-50' src={logo} alt="" />
-          </div>
-          <div className='collapse navbar-collapse fs-5' id='navbarNav'>
-            <ul className='navbar-nav justify-content-center'>
-              {
-              MenuItems.map((item,index)=>{
-              return(
-                <li key={index} className='nav-item'>
-                  <a className={item.className} href={item.url}>
-                    {item.title}
-                  </a>
-                </li>
-              )
-              })}
-            </ul>
-          </div>
-          <div className='cart-widget'>
-            <CartWidget/>
-          </div>
-        </div>
-      </nav>
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Container>
+          <Navbar.Brand href="#home">
+            <img
+              src={logo}
+              width="100"
+              height="50"
+              className="d-inline-block align-top"
+              alt="React Bootstrap logo"
+            />
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+              <Nav className="me-auto">
+                <Nav.Link href="#shoes">Calzado</Nav.Link>
+                <Nav.Link href="#clothing">Indumentaria</Nav.Link>
+                <Nav.Link href="#accesories">Accesorios</Nav.Link>
+              </Nav>
+              <Nav>
+                <Nav.Link eventKey={2} href="#cart">
+                  <CartWidget/>
+                </Nav.Link>
+              </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     )
 }
 

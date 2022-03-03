@@ -1,27 +1,32 @@
 import { useState, useEffect } from "react"
-import  getFetch  from "../../helpers/getFetch"
-
+import {stock} from '../../data/stock.js'
+import getFetch from "../helpers/getFetch.js"
 import Loader from "../Loader/Loader"
-import CartProduct from "./CartProduct"
+import  ItemList  from "./ItemList"
 
-function ItemListContainer( {greeting} )  {
-    const [products, setProducts] = useState([])
-    const [loading, setLoading] = useState(true)
+export const ItemListContainer = ( {greeting} ) => {
+    const [items, setItems] = useState([])
+    const [loading, setLoading] = useState(false)
   
     useEffect(() => {
-        getFetch
-        .then((resp) => setProducts(resp))
+        setLoading(true)
+        getFetch(stock)
+        .then((response) => setItems(response))
+        .catch(error => console.log(error))
         .finally(()=> setLoading(false))    
-        }, [])
-
-    const onAdd = (count) => { console.log(` ${count} products have been added to cart ` ) }
+    }, [])
 
     return (
         <div className="row text-center py-3 px-auto">
             <h1>{greeting}</h1>
-            {   
-            loading ? <Loader/> : <CartProduct products={products} onAdd={onAdd} /> }    
+                { 
+                loading? 
+                    (<Loader/>) 
+                    : 
+                    (<ItemList items={items}/>) 
+                }
         </div>
-    )}
+    )
+}
 
 export default ItemListContainer

@@ -1,6 +1,7 @@
 import ItemCount from "../ItemCount/ItemCount"
+import {Link} from 'react-router-dom'
 
-export const Item = ({img,price,name,description,stock}) => {
+export const Item = ({id,img,price,name,description,stock}) => {
     return  (
             <div className='col-md-4'>                   
                 <div className="card m-5" style={{backgroundColor:"white", borderRadius:"sm", boxShadow:"5px grey", padding:"6px", width:"256px" , height:"400px"}}>
@@ -14,6 +15,11 @@ export const Item = ({img,price,name,description,stock}) => {
                     <div className="card-footer">
                         <span>{`${description}`}</span>                                                                                 
                     </div>
+                    <Link to ={`detail/${id}`}>
+                      <button>
+                          More Details
+                      </button>
+                    </Link>
                     <ItemCount initial = {0} stock = {stock}/>
                 </div>
             </div>

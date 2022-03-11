@@ -63,7 +63,7 @@ export const stock = [
         id:6,
         img:'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQPLf-HxKDsr7cdgO4JTOC4-PFV1-pIbzXz_ycIZpNwTqKFPy8a3uC-nzAm72iQSfnJjy3AxA_sInDe&usqp=CAc',   
         name:'Zapatillas Adidas Coreracer' ,           
-        ategory: 'shoes',      
+        category: 'shoes',      
         price: 10000,   
         stock: 10,  
         description:''

@@ -3,31 +3,35 @@ import Nav from 'react-bootstrap/Nav'
 import Container from 'react-bootstrap/Container'
 import logo from '../../imgs/icons/logo.svg'
 import { CartWidget } from './CartWidget'
+import {NavLink} from 'react-router-dom'
 
 function NavBar () {
     return (
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="#home">
-            <img
-              src={logo}
-              width="100"
-              height="50"
-              className="d-inline-block align-top"
-              alt="React Bootstrap logo"
-            />
-          </Navbar.Brand>
+          <NavLink to="/">
+            <Navbar.Brand>
+              <img
+                src={logo}
+                width="100"
+                height="50"
+                className="d-inline-block align-top"
+                alt="React Bootstrap logo"
+              />
+            </Navbar.Brand>
+          </NavLink>
+
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">
-                <Nav.Link href="#shoes">Calzado</Nav.Link>
-                <Nav.Link href="#clothing">Indumentaria</Nav.Link>
-                <Nav.Link href="#accesories">Accesorios</Nav.Link>
+                <NavLink to="/category/shoes">Calzado</NavLink>
+                <NavLink to="/category/clothing">Indumentaria</NavLink>
+                <NavLink to="/category/accesories">Accesorios</NavLink>
               </Nav>
               <Nav>
-                <Nav.Link eventKey={2} href="#cart">
+                <NavLink to="/cart">
                   <CartWidget/>
-                </Nav.Link>
+                </NavLink>
               </Nav>
           </Navbar.Collapse>
         </Container>

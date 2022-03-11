@@ -1,8 +1,8 @@
-export const getFetch = (products) => {
+export const getItem = (products) => {
     return new Promise(resolve=>{
         setTimeout(() => {
             resolve(products)
         }, 2000);
     })
 } 
-export default getFetch
+export default getItem

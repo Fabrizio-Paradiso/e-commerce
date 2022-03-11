@@ -1,20 +1,32 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect} from "react"
+import { useParams } from 'react-router-dom'
 import {stock} from '../../data/stock.js'
-import getFetch from "../helpers/getFetch.js"
+import getItem from "../helpers/getItem.js"
 import Loader from "../Loader/Loader"
 import  ItemList  from "./ItemList"
+
 
 export const ItemListContainer = ( {greeting} ) => {
     const [items, setItems] = useState([])
     const [loading, setLoading] = useState(false)
+    const { category } = useParams ()
   
     useEffect(() => {
-        setLoading(true)
-        getFetch(stock)
-        .then((response) => setItems(response))
-        .catch(error => console.log(error))
-        .finally(()=> setLoading(false))    
-    }, [])
+        if ( category ){
+            setLoading(true)
+            getItem(stock)
+            .then((resp) => setItems(resp.filter (prod => prod.category === category)))
+            .catch(error => console.log(error))
+            .finally(()=> setLoading(false))    
+        }
+        else{
+            setLoading(true)
+            getItem(stock)
+            .then((response) => setItems(response))
+            .catch(error => console.log(error))
+            .finally(()=> setLoading(false))    
+        }
+    }, [category])
 
     return (
         <div className="row text-center py-3 px-auto">

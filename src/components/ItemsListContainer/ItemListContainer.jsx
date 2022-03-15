@@ -30,7 +30,7 @@ export const ItemListContainer = ( {greeting} ) => {
 
     return (
         <div className="row text-center py-3 px-auto">
-            <h1>{greeting}</h1>
+            <h1 style={{fontWeight:"bolder"}}>{greeting}</h1>
                 { 
                 loading? 
                     (<Loader/>) 

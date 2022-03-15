@@ -1,21 +1,22 @@
-
 import React from 'react'
+import ItemCount from "../ItemCount/ItemCount"
+import dai from "../../imgs/icons/dai.png"
 
-export const ItemDetail = ({img,price,name,description}) => {
+export const ItemDetail = ({img,price,name,description,stock}) => {
   return (
-    <div className='item-detail'>
-        <div className="card m-5" style={{backgroundColor:"white", borderRadius:"sm", boxShadow:"5px grey", padding:"6px", width:"256px" , height:"400px"}}>
-                    <div className="card-body d-flex flex-column mx-auto text-center">
-                        <img src={img} alt={description} className='w-100' style={{ width: "150px", height: "200px" }} />
-                        <span>${price}</span>                                                           
-                    </div>
-                    <div className="card-header">
-                        {`${name}`}
-                    </div>
-                    <div className="card-footer">
-                        <span>{`${description}`}</span>                                                                                 
-                    </div>
+    <>
+        <div className='item-detail-container row align-items-center'>
+          <div className='item-detail-image col-6 text-end my-4'>
+            <img src={img} alt={name} style={{width: "300px", height: "330px" , padding:"10px", backgroundColor:"white", boxShadow:" rgba(0, 0, 0, 0.35) 0px 5px 15px"}}/>  
+          </div>
+        
+        <div className='item-detail-description d-flex-column col-3 text-center my-4' >
+          <h2 className='text-dark' style={{fontWeight:"bolder"}}> {name} </h2>
+          <span style={{marginLeft:'2px', fontWeight:"bold"}}>{price}<img height={15} className="mx-2" alt="coin" src={dai}/></span>  
+          <span className='d-flex'> {description} </span>
+          <ItemCount initial = {0} stock = {stock}/>
         </div>
-    </div>
+      </div>
+    </>
   )
 }

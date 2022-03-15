@@ -1,29 +1,55 @@
-import ItemCount from "../ItemCount/ItemCount"
 import {Link} from 'react-router-dom'
+import { Box, Center, Image, Stack, Text } from "@chakra-ui/react"
+import dai from "../../imgs/icons/dai.png"
 
-export const Item = ({id,img,price,name,description,stock}) => {
+export const Item = ({id,img,category,price,name}) => {
     return  (
-            <div className='col-md-4'>                   
-                <div className="card m-5" style={{backgroundColor:"white", borderRadius:"sm", boxShadow:"5px grey", padding:"6px", width:"256px" , height:"400px"}}>
-                    <div className="card-body d-flex flex-column mx-auto text-center">
-                        <img src={img} alt={description} className='w-100' style={{ width: "150px", height: "200px" }} />
-                        <span>${price}</span>                                                           
-                    </div>
-                    <div className="card-header">
-                        {`${name}`}
-                    </div>
-                    <div className="card-footer">
-                        <span>{`${description}`}</span>                                                                                 
-                    </div>
-                    <Link to ={`detail/${id}`}>
-                      <button>
-                          More Details
-                      </button>
-                    </Link>
-                    <ItemCount initial = {0} stock = {stock}/>
-                </div>
-            </div>
-            )
+
+        <div className='col-md-3'>
+            <Link to ={`/detail/${id}`} style={{textDecoration:'inherit', color:'inherit'}}>
+                <Box >   
+                    <Box style={{boxShadow:" rgba(0, 0, 0, 0.35) 0px 5px 15px"}}
+                        backgroundColor="white"
+                        padding={6}
+                        position="relative"
+                        margin={50}
+                        width={250}
+                        height={300}
+                    >
+                        <Stack>
+                            <Stack
+                                style={{border:'1px solid #9c9c9c', borderRadius: '10px! important'}}
+                                height="32px"
+                                width="70px"
+                                alignItems="center"
+                                backgroundColor="primary.600"
+                                borderRadius={9999}
+                                borderWidth={1}
+                                color="primary.500"
+                                direction="row"
+                                fontSize="sm"
+                                fontWeight="100"
+                                justifyContent="center"
+                                position ="absolute"
+                                right={6}
+                                spacing={2}
+                            >
+                                <Text style={{marginBottom:"0px", fontWeight:"bold"}}>{price}</Text>
+                                <Image height={15} src={dai}></Image>
+                            </Stack>
+                            <Center>
+                                <Image objectFit="contain" marginTop={10} src={img} height={200} width={300}></Image>
+                            </Center>
+                            <Stack alignItems="flex-start" className="my-2" spacing={0}>
+                                <Text >{category.charAt(0).toUpperCase()+category.slice(1)}</Text>
+                                <Text fontWeight="bold">{name}</Text>
+                            </Stack>
+                        </Stack>   
+                    </Box>
+                </Box>
+            </Link>
+        </div>
+    )
 } 
 
 export default Item

@@ -1,9 +1,6 @@
 import { useState } from "react"
-import Badge from "@material-ui/core/Badge";
-import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import Button from "@material-ui/core/Button";
-import AddIcon from "@material-ui/icons/Add";
-import RemoveIcon from "@material-ui/icons/Remove";
+import {AddIcon,MinusIcon} from "@chakra-ui/icons";
+import { Button,Text } from "@chakra-ui/react";
 
 const ItemCount = ({initial, stock=0}) => {
     
@@ -23,14 +20,20 @@ const ItemCount = ({initial, stock=0}) => {
     }
 
     return (
-        <div className="d-flex mx-auto">
-            <Button className="bg-dark mx-2" type="button" styledisabled={count===0} onClick={substract}><RemoveIcon color="primary" fontSize="medium"/></Button>
-            <Button className="bg-dark mx-2" type="button" disabled={count===stock} onClick={addition}><AddIcon color="primary" fontSize="medium"/></Button>
-            <Button onClick={handleAdd}>
-                <Badge color="secondary" type="button" styleDisabled={count===0} badgeContent={count}><ShoppingCartIcon/>{""}</Badge>
-            </Button>
-             
+        <>
+        <div className="d-flex mx-auto my-3 justify-content-center">
+            <Button borderColor="black" borderRadius="3" bg="black" boxShadow="sm" mx="15" styledisabled={count===0} onClick={substract}><MinusIcon color="white" fontSize="large"/></Button>
+            <Text my="auto">Cantidad: {count}</Text>
+            <Button borderColor="black" borderRadius="3" bg="black" boxShadow="sm" mx="15" styledisabled={count===stock} onClick={addition}><AddIcon color="white" fontSize="large"/></Button>
         </div>
+        <div className="d-flex-column text-center">
+            <Text py="1" color="red">Only {stock} in stock </Text>
+            <Button borderColor="black" borderRadius="3" bg="black" boxShadow="sm" mx="15" color="white" height="30" textAlign="center" onClick={handleAdd}>
+                <Text my="auto" type="button" styleDisabled={count===0} badgeContent={count}>Buy Now</Text>
+            </Button>
+        </div>
+
+        </>
     )
 }
 

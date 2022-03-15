@@ -29,7 +29,7 @@ const ItemCount = ({initial, stock=0}) => {
         <div className="d-flex-column text-center">
             <Text py="1" color="red">Only {stock} in stock </Text>
             <Button borderColor="black" borderRadius="3" bg="black" boxShadow="sm" mx="15" color="white" height="30" textAlign="center" onClick={handleAdd}>
-                <Text my="auto" type="button" styleDisabled={count===0} badgeContent={count}>Buy Now</Text>
+                <Text my="auto" type="button" styleDisabled={count===0} badgeContent={count}>Add to cart</Text>
             </Button>
         </div>
 

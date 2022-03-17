@@ -2,19 +2,18 @@ import { useState } from "react"
 import {AddIcon,MinusIcon} from "@chakra-ui/icons";
 import { Button,Text } from "@chakra-ui/react";
 
-const ItemCount = ({initial, stock=0}) => {
+const ItemCount = ({initial, stockInicial=0, onAdd}) => {
     
     const [count, setCount] = useState(initial)
+    const [stock, setStock] = useState(stockInicial)
     
     const addition = () => ( count < stock ? setCount(count+1) : null )  
 
     const substract = () => ( count > initial ? setCount(count - 1) : null )
 
-    const onAdd = (count) => (
-        console.log(`${count} items have been added to cart`)
-    )
-    
-    const handleAdd = () => {     
+    const handleAdd = (e) => {
+          
+        setStock(stock-count)
         setCount(0)
         onAdd(count) 
     }
@@ -28,8 +27,8 @@ const ItemCount = ({initial, stock=0}) => {
         </div>
         <div className="d-flex-column text-center">
             <Text py="1" color="red">Only {stock} in stock </Text>
-            <Button borderColor="black" borderRadius="3" bg="black" boxShadow="sm" mx="15" color="white" height="30" textAlign="center" onClick={handleAdd}>
-                <Text my="auto" type="button" styleDisabled={count===0} badgeContent={count}>Add to cart</Text>
+            <Button borderColor="black" borderRadius="3" bg="black" boxShadow="sm" mx="15" color="white" height="30" textAlign="center" disabled={!count} badgeContent={count} onClick={handleAdd}>
+                Add to cart
             </Button>
         </div>
 

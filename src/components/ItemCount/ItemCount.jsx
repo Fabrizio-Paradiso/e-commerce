@@ -1,6 +1,7 @@
 import { useState } from "react"
 import {AddIcon,MinusIcon} from "@chakra-ui/icons";
 import { Button,Text } from "@chakra-ui/react";
+import {Link} from 'react-router-dom'
 
 const ItemCount = ({initial, stockInicial=0, onAdd}) => {
     
@@ -11,8 +12,7 @@ const ItemCount = ({initial, stockInicial=0, onAdd}) => {
 
     const substract = () => ( count > initial ? setCount(count - 1) : null )
 
-    const handleAdd = (e) => {
-          
+    const handleAdd = () => {
         setStock(stock-count)
         setCount(0)
         onAdd(count) 
@@ -30,6 +30,11 @@ const ItemCount = ({initial, stockInicial=0, onAdd}) => {
             <Button borderColor="black" borderRadius="3" bg="black" boxShadow="sm" mx="15" color="white" height="30" textAlign="center" disabled={!count} badgeContent={count} onClick={handleAdd}>
                 Add to cart
             </Button>
+            <Link to='/cart'>            
+                <Button borderColor="black" borderRadius="3" bg="black" boxShadow="sm" mx="15" color="white" height="30" textAlign="center">
+                    Buy Finish
+                </Button>
+            </Link>
         </div>
 
         </>

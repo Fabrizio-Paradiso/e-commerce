@@ -5,7 +5,8 @@ export const stock = [
         name:'Adidas Black Hoodie',                  
         category: 'clothing',   
         price: 2500,    
-        stock: 10,  
+        stock: 10,
+        quantity: 0,  
         description:'This product is made from recycled material as part of our quest to end plastic pollution.'
     },
 
@@ -15,7 +16,8 @@ export const stock = [
         name:'Remera Adidas Trefoil',                  
         category: 'clothing',  
         price: 2500,    
-        stock: 10,  
+        stock: 10,
+        quantity: 0,  
         description:'This product is made from recycled material as part of our quest to end plastic pollution.'
     },
 
@@ -25,7 +27,8 @@ export const stock = [
         name:'Pantalon Adidas Negro',    
         category: 'clothing',   
         price: 2500,    
-        stock: 10,  
+        stock: 10,
+        quantity: 0,  
         description:'This product is made from recycled material as part of our quest to end plastic pollution.'
     },
 
@@ -35,7 +38,8 @@ export const stock = [
         name:'Remera Nike Thunder Block',              
         category: 'clothing',   
         price: 2500,    
-        stock: 10,  
+        stock: 10,
+        quantity: 0,  
         description:'This product is made from recycled material as part of our quest to end plastic pollution.'
     },
 
@@ -45,7 +49,8 @@ export const stock = [
         name:'Campera Nike Therma',                    
         category: 'clothing',   
         price: 2500,    
-        stock: 10,  
+        stock: 10,
+        quantity: 0,  
         description:'This product is made from recycled material as part of our quest to end plastic pollution.'
     },
 
@@ -55,7 +60,8 @@ export const stock = [
         name:'Pantalon Nike Sportswear Air',           
         category: 'clothing',   
         price: 2500,    
-        stock: 10,  
+        stock: 10,
+        quantity: 0,  
         description:'This product is made from recycled material as part of our quest to end plastic pollution.'
     },
 
@@ -65,7 +71,8 @@ export const stock = [
         name:'Adidas Coreracer' ,           
         category: 'shoes',      
         price: 10000,   
-        stock: 10,  
+        stock: 10,
+        quantity: 0,  
         description:'This product is made from recycled material as part of our quest to end plastic pollution.'
     },
     
@@ -75,7 +82,8 @@ export const stock = [
         name:'Adidas Multix',         
         category: 'shoes',      
         price: 10000,   
-        stock: 10,  
+        stock: 10,
+        quantity: 0,  
         description:'This product is made from recycled material as part of our quest to end plastic pollution.'
     },
 
@@ -85,7 +93,8 @@ export const stock = [
         name:'Adidas USA 84',         
         category: 'shoes',      
         price: 10000,   
-        stock: 10,  
+        stock: 10,
+        quantity: 0,  
         description:'This product is made from recycled material as part of our quest to end plastic pollution.'
     },
 
@@ -95,7 +104,8 @@ export const stock = [
         name:'Zapatillas Nike Air Max Oketo',            
         category: 'shoes',      
         price: 10000,   
-        stock: 10,  
+        stock: 10,
+        quantity: 0,  
         description:'This product is made from recycled material as part of our quest to end plastic pollution.'
     },
 
@@ -105,7 +115,8 @@ export const stock = [
         name:'Zapatillas Nike Zoom Gravity',             
         category: 'shoes',      
         price: 10000,   
-        stock: 10,  
+        stock: 10,
+        quantity: 0,  
         description:'This product is made from recycled material as part of our quest to end plastic pollution.'
     },
 
@@ -116,6 +127,7 @@ export const stock = [
         category: 'shoes',      
         price: 10000,   
         stock: 110,
+        quantity: 0,
         description:'This product is made from recycled material as part of our quest to end plastic pollution.'
     },
 
@@ -126,6 +138,7 @@ export const stock = [
         category: 'accesories',      
         price: 300,   
         stock: 110,
+        quantity: 0,
         description:'This product is made from recycled material as part of our quest to end plastic pollution.'
     },
 
@@ -136,6 +149,7 @@ export const stock = [
         category: 'accesories',      
         price: 500,   
         stock: 110,
+        quantity: 0,
         description:'This product is made from recycled material as part of our quest to end plastic pollution.'
     },
 
@@ -146,6 +160,7 @@ export const stock = [
         category: 'accesories',      
         price: 800,   
         stock: 110,
+        quantity: 0,
         description:'This product is made from recycled material as part of our quest to end plastic pollution.'
     },
 
@@ -156,6 +171,7 @@ export const stock = [
         category: 'accesories',      
         price: 800,   
         stock: 110,
+        quantity: 0,
         description:'This product is made from recycled material as part of our quest to end plastic pollution.'
     }
 ]

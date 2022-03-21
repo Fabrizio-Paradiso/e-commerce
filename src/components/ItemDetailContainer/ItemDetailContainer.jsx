@@ -25,7 +25,7 @@ export const ItemDetailContainer = () => {
                 loading? 
                 (<Loader/>) 
                 : 
-                (<ItemDetail {...item}/>)
+                (<ItemDetail item={item}/>)
             }
         </div>
     )

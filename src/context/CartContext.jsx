@@ -23,15 +23,17 @@ const CartContextProvider = ({children}) => {
     const updateQuantity = (item, quantity) =>{
       let currentQuantity = getCurrentQuantity(item.id)
       removeItemByID(item.id)
-      if ( (quantity + currentQuantity) >= item.stock ){ addItem(item, item.stock)}
-      else { addItem(item, quantity + currentQuantity) }
+      ( (quantity + currentQuantity) >= getAvailableStock(item,item.id) )?
+        addItem(item, getAvailableStock(item,item.id))
+        :
+        addItem(item, quantity + currentQuantity)
     }
     
     const addItem = (item, quantity) => {
         isInCart(item.id) ?
           updateQuantity(item,quantity)
           :
-          setCartList([...cartList, {...item,quantity:quantity,stock:(item.stock-quantity)}])
+          setCartList([...cartList, {...item, quantity:quantity}])
     }
 
     return (

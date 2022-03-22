@@ -11,14 +11,21 @@ const CartContextProvider = ({children}) => {
 
     const clearCart = () => { setCartList ([]) }
 
-    const removeItemByID = (id) => { 
-      let index = cartList.map((item) => item.id).indexOf(id)
-      setCartList([...cartList.splice(index,1)])
+    const removeItemByID = (id) => {
+      if(cartList.length>1){
+        let index = cartList.map((item) => item.id).indexOf(id)
+        setCartList([...cartList.splice(index,1)])
+      }
+      else{
+        clearCart()
+      } 
     }
-
-    const getCurrentQuantity = (id) => { return cartList.find(item => item.id === id).quantity }
+    
+    const getCurrentQuantity = (id) => { return cartList.find(item => item.id === id).quantity}
 
     const getAvailableStock = (item) => { return isInCart(item.id)? (item.stock - (getCurrentQuantity(item.id))) : (item.stock) }
+
+    const getSubtotalPrice = (item) => { return item.quantity*item.price  }
 
     const updateQuantity = (item, quantity) =>{
       let currentQuantity = getCurrentQuantity(item.id)
@@ -47,6 +54,7 @@ const CartContextProvider = ({children}) => {
             removeItemByID,
             getCurrentQuantity,
             getAvailableStock,
+            getSubtotalPrice,
             updateQuantity,
             clearCart
           }}>

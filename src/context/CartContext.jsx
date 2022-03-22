@@ -23,10 +23,12 @@ const CartContextProvider = ({children}) => {
     const updateQuantity = (item, quantity) =>{
       let currentQuantity = getCurrentQuantity(item.id)
       removeItemByID(item.id)
-      ( (quantity + currentQuantity) >= getAvailableStock(item,item.id) )?
+      if ( (quantity + currentQuantity) >= getAvailableStock(item,item.id) ){
         addItem(item, getAvailableStock(item,item.id))
-        :
+      }
+      else{
         addItem(item, quantity + currentQuantity)
+      }
     }
     
     const addItem = (item, quantity) => {
@@ -53,5 +55,6 @@ const CartContextProvider = ({children}) => {
       );
     
 }
+
 
 export default CartContextProvider

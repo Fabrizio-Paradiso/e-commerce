@@ -39,7 +39,7 @@ export const ItemDetail = ({item}) => {
                 :
                     <>
                     <Link to={"/"} style={{textDecoration:'inherit', color:'inherit'}}>
-                        <Button borderColor="black" borderRadius="3" bg="black" boxShadow="sm" mx="15" color="white" height="30" textAlign="center">
+                        <Button borderColor="black" borderRadius="3" bg="black" boxShadow="sm" mx="15" color="white" height="30" textAlign="center" >
                             Keep Shopping
                         </Button>
                     </Link>

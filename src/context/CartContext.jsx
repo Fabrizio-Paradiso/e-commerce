@@ -18,7 +18,7 @@ const CartContextProvider = ({children}) => {
 
     const getCurrentQuantity = (id) => { return cartList.find(item => item.id === id).quantity }
 
-    const getAvailableStock = (item,id) => { return isInCart(item.id)? (item.stock - (cartList.find(item => item.id === id).quantity)) : (item.stock) }
+    const getAvailableStock = (item) => { return isInCart(item.id)? (item.stock - (getCurrentQuantity(item.id))) : (item.stock) }
 
     const updateQuantity = (item, quantity) =>{
       let currentQuantity = getCurrentQuantity(item.id)

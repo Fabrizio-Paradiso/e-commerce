@@ -30,7 +30,7 @@ export const ItemDetail = ({item}) => {
           <span className='d-flex'> {item.description} </span>
           <ItemCount count={currentCart} availableStock = {item.stock} handleCount={setCurrentCart}/>
           <div className="d-flex-column text-center">
-          <Text py="1" color="red">Only {getAvailableStock(item,item.id)} in stock </Text>
+          <Text py="1" color="red">Only {getAvailableStock(item)} in stock </Text>
             {   
                 !clickAdd?
                     <Button borderColor="black" borderRadius="3" bg="black" boxShadow="sm" mx="15" color="white" height="30" textAlign="center" disabled={!currentCart} onClick={handleAddItem}>

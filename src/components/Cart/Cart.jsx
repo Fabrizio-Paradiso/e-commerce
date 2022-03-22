@@ -23,7 +23,7 @@ export const Cart = () => {
                 }
             </>
             <div className="cart-header" style={{margin:"0 2rem 0 2.9rem"}}>
-            <button style={{all:"unset", margin:"2rem 0 0 2.5rem",cursor:"pointer",backgroundColor:"#F58A1F", width:"150px", height:"30px" , boxShadow: "0px 1px gray"}} onClick={clearCart}><span style={{ paddingLeft:"0.7rem", fontSize:"1.1rem", fontWeight:"bold", borderBottom:"2rem" ,color:"#fff", textShadow: "1.2px 1px 0.5px gray"}}> Empty Cart<img src={clear} alt="shop-bag" style={{height:"23px", paddingLeft:"0.3rem"}}/></span></button>
+            <button style={{all:"unset", margin:"3rem 0 0 2.5rem",cursor:"pointer",backgroundColor:"#F58A1F", width:"150px", height:"30px" , boxShadow: "0px 1px gray"}} onClick={clearCart}><span style={{ paddingLeft:"0.7rem", fontSize:"1.1rem", fontWeight:"bold", borderBottom:"2rem" ,color:"#fff", textShadow: "1.2px 1px 0.5px gray"}}> Empty Cart<img src={clear} alt="shop-bag" style={{height:"23px", paddingLeft:"0.3rem"}}/></span></button>
             </div>
         </div>
     )

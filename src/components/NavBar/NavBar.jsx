@@ -4,8 +4,10 @@ import Container from 'react-bootstrap/Container'
 import logo from '../../imgs/icons/logo.svg'
 import { CartWidget } from './CartWidget'
 import {NavLink} from 'react-router-dom'
+import CartContextProvider, { useCartContext } from '../../context/CartContext'
 
 function NavBar () {
+    const { cartList } = useCartContext(CartContextProvider)
     return (
       <Navbar collapseOnSelect expand="lg" style={{backgroundImage:"url('https://www.digitalsport.com.ar/files/stores/skin_fluid.png')", boxShadow:"0 5px 2px -2px #9c9c9c"}}>
         <Container>
@@ -30,7 +32,14 @@ function NavBar () {
               </Nav>
               <Nav>
                 <NavLink to="/cart" className="d-none d-md-block">
-                  <CartWidget/>
+                  <>
+                    {
+                      cartList.length?
+                        <CartWidget/>
+                        :
+                        null
+                    }
+                  </>
                 </NavLink>
               </Nav>
           </Navbar.Collapse>

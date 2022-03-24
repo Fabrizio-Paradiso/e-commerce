@@ -3,14 +3,14 @@ import ItemCount from "../ItemCount/ItemCount"
 import dai from "../../imgs/icons/dai.png"
 import CartContextProvider, { useCartContext } from '../../context/CartContext'
 import { useState } from 'react'
-import { Button,Text } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 import {Link} from 'react-router-dom'
 
 export const ItemDetail = ({item}) => {
   
   const [currentCart, setCurrentCart] = useState(0)
   const [clickAdd, setClickAdd] = useState(false)
-  const { addItem, getAvailableStock } = useCartContext(CartContextProvider)
+  const { addItem } = useCartContext(CartContextProvider)
 
   const handleAddItem = () => {
     addItem(item,currentCart)
@@ -30,23 +30,22 @@ export const ItemDetail = ({item}) => {
           <span className='d-flex'> {item.description} </span>
           <ItemCount count={currentCart} availableStock = {item.stock} handleCount={setCurrentCart}/>
           <div className="d-flex-column text-center">
-          <Text py="1" color="red">Only {getAvailableStock(item)} in stock </Text>
             {   
                 !clickAdd?
-                    <Button borderColor="black" borderRadius="3" bg="black" boxShadow="sm" mx="15" color="white" height="30" textAlign="center" disabled={!currentCart} onClick={handleAddItem}>
-                        Add to cart
-                    </Button>
+                    <button className="text-center mx-auto px-auto" style={{all:"unset", marginTop:"2rem", cursor:"pointer", backgroundColor:"#F58A1F", width:"150px", height:"30px" , boxShadow: "0px 1px black", border:"0.06rem black solid"}} disabled={!currentCart} onClick={handleAddItem}>
+                      <span style={{fontSize:"1.1rem", fontWeight:"bold", borderBottom:"2rem" ,color:"#fff", textShadow: "1.2px 1px 0.5px black"}}>Add to cart</span>
+                    </button>
                 :
                     <>
                     <Link to={"/"} style={{textDecoration:'inherit', color:'inherit'}}>
-                        <Button borderColor="black" borderRadius="3" bg="black" boxShadow="sm" mx="15" color="white" height="30" textAlign="center" >
-                            Continue Shopping
-                        </Button>
+                      <button className="text-center mx-auto px-auto" style={{all:"unset", marginTop:"2rem", cursor:"pointer", backgroundColor:"#F58A1F", width:"150px", height:"30px" , boxShadow: "0px 1px black",  border:"0.06rem black solid"}}>
+                            <span style={{fontSize:"1.1rem", fontWeight:"bold", borderBottom:"2rem" ,color:"#fff", textShadow: "1.2px 1px 0.5px black"}}>Keep Shopping</span>
+                      </button>
                     </Link>
                     <Link to={"/cart"} style={{textDecoration:'inherit', color:'inherit'}}>            
-                        <Button borderColor="black" borderRadius="3" bg="black" boxShadow="sm" mx="15" color="white" height="30" textAlign="center">
-                            Buy Finish
-                        </Button>
+                        <button className="text-center mx-auto px-auto" style={{all:"unset", marginTop:"2rem", cursor:"pointer", backgroundColor:"#F58A1F", width:"150px", height:"30px" , boxShadow: "0px 1px black", border:"0.06rem black solid"}}>
+                          <span style={{fontSize:"1.1rem", fontWeight:"bold", borderBottom:"2rem", color:"#fff", textShadow: "1.2px 1px 0.5px black"}}>Buy finish</span>
+                        </button>
                     </Link>
                     </>
             }

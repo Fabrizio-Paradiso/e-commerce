@@ -23,19 +23,16 @@ const CartContextProvider = ({children}) => {
     
     const getCurrentQuantity = (id) => { return cartList.find(item => item.id === id).quantity}
 
-    const getAvailableStock = (item) => { return isInCart(item.id)? (item.stock - (getCurrentQuantity(item.id))) : (item.stock) }
-
     const getSubtotalPrice = (item) => { return item.quantity*item.price  }
+
+    const getTotalPrice = () => { return cartList.reduce( (sum, item) => sum + getSubtotalPrice(item),0) }
+
+    const getCartQuantity = () => { return cartList.reduce( (sum, item) => sum + item.quantity,0) }
 
     const updateQuantity = (item, quantity) =>{
       let currentQuantity = getCurrentQuantity(item.id)
       removeItemByID(item.id)
-      if ( (quantity + currentQuantity) >= getAvailableStock(item,item.id) ){
-        addItem(item, getAvailableStock(item,item.id))
-      }
-      else{
-        addItem(item, quantity + currentQuantity)
-      }
+      addItem(item, quantity + currentQuantity)
     }
     
     const addItem = (item, quantity) => {
@@ -53,8 +50,9 @@ const CartContextProvider = ({children}) => {
             addItem,
             removeItemByID,
             getCurrentQuantity,
-            getAvailableStock,
             getSubtotalPrice,
+            getTotalPrice,
+            getCartQuantity,
             updateQuantity,
             clearCart
           }}>

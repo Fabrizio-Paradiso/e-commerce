@@ -3,7 +3,6 @@ import ItemCount from "../ItemCount/ItemCount"
 import dai from "../../imgs/icons/dai.png"
 import CartContextProvider, { useCartContext } from '../../context/CartContext'
 import { useState } from 'react'
-import { Button } from "@chakra-ui/react";
 import {Link} from 'react-router-dom'
 
 export const ItemDetail = ({item}) => {
@@ -26,8 +25,8 @@ export const ItemDetail = ({item}) => {
         
         <div className='item-detail-description d-flex-column col-3 text-center my-4' >
           <h2 className='text-dark' style={{fontWeight:"bolder"}}> {item.name} </h2>
-          <span style={{marginLeft:'2px', fontWeight:"bold"}}>{item.price}<img height={15} className="mx-2" alt="coin" src={dai}/></span>  
-          <span className='d-flex'> {item.description} </span>
+          <span className='py-2' style={{marginLeft:'2px', fontWeight:"bold"}}>{item.price}<img height={20} className="mx-2" alt="coin" src={dai} style={{marginBottom:"0.2rem"}}/></span>  
+          <span className='d-flex py-4'> {item.description} </span>
           <ItemCount count={currentCart} availableStock = {item.stock} handleCount={setCurrentCart}/>
           <div className="d-flex-column text-center">
             {   
@@ -38,12 +37,12 @@ export const ItemDetail = ({item}) => {
                 :
                     <>
                     <Link to={"/"} style={{textDecoration:'inherit', color:'inherit'}}>
-                      <button className="text-center mx-auto px-auto" style={{all:"unset", marginTop:"2rem", cursor:"pointer", backgroundColor:"#F58A1F", width:"150px", height:"30px" , boxShadow: "0px 1px black",  border:"0.06rem black solid"}}>
+                      <button className="text-center mx-2 px-auto" style={{all:"unset", marginTop:"2rem", cursor:"pointer", backgroundColor:"#F58A1F", width:"150px", height:"30px" , boxShadow: "0px 1px black",  border:"0.06rem black solid"}}>
                             <span style={{fontSize:"1.1rem", fontWeight:"bold", borderBottom:"2rem" ,color:"#fff", textShadow: "1.2px 1px 0.5px black"}}>Keep Shopping</span>
                       </button>
                     </Link>
                     <Link to={"/cart"} style={{textDecoration:'inherit', color:'inherit'}}>            
-                        <button className="text-center mx-auto px-auto" style={{all:"unset", marginTop:"2rem", cursor:"pointer", backgroundColor:"#F58A1F", width:"150px", height:"30px" , boxShadow: "0px 1px black", border:"0.06rem black solid"}}>
+                        <button className="text-center mx-2 px-auto" style={{all:"unset", marginTop:"2rem", cursor:"pointer", backgroundColor:"#F58A1F", width:"150px", height:"30px" , boxShadow: "0px 1px black", border:"0.06rem black solid"}}>
                           <span style={{fontSize:"1.1rem", fontWeight:"bold", borderBottom:"2rem", color:"#fff", textShadow: "1.2px 1px 0.5px black"}}>Buy finish</span>
                         </button>
                     </Link>

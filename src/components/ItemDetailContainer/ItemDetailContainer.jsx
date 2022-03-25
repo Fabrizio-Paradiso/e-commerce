@@ -4,7 +4,7 @@ import {stock} from '../../data/stock.js'
 import {ItemDetail} from "./ItemDetail"
 import getItem from "../helpers/getItem.js"
 import Loader from "../Loader/Loader"
-
+// import { collection, doc, getDoc, getDocs, getFirestore, limit, query, where } from "firebase/firestore"
 
 export const ItemDetailContainer = () => {
     const [item, setItem] = useState([])
@@ -18,6 +18,15 @@ export const ItemDetailContainer = () => {
         .catch(error => console.log(error))
         .finally(()=> setLoading(false))    
     }, [id])
+
+    // useEffect(() => {
+    //     const db = getFirestore()
+    //     const queryDb = doc(db,'items','0zfUwrVjXCrKS4cHA7g3')
+    //     getDoc(queryDb)
+    //     .then(resp => setItem({id: resp.id, ...resp.data()}))
+    //     // const queryColection = collection(db, 'items')
+    //     // console.log(queryColection)
+    // },[])
 
     return (
         <div className="row text-center py-3 px-auto">

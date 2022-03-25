@@ -5,6 +5,7 @@ import CartContextProvider, { useCartContext } from '../../context/CartContext'
 import { useState } from 'react'
 import {Link} from 'react-router-dom'
 
+
 export const ItemDetail = ({item}) => {
   
   const [currentCart, setCurrentCart] = useState(0)

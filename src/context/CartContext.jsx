@@ -11,17 +11,7 @@ const CartContextProvider = ({children}) => {
 
     const clearCart = () => { setCartList ([]) }
 
-    const removeItemByID = (id) => {
-      if(cartList.length>1){
-        let index = cartList.map((item) => item.id).indexOf(id)
-        setCartList([...cartList.splice(index,1)])
-      }
-      else{
-        clearCart()
-      } 
-    }
-    
-    const getCurrentQuantity = (id) => { return cartList.find(item => item.id === id).quantity}
+    const removeItemByID = (id) => { setCartList ( cartList.filter ( (item) => item.id !== id) )}
 
     const getSubtotalPrice = (item) => { return item.quantity*item.price  }
 
@@ -29,15 +19,11 @@ const CartContextProvider = ({children}) => {
 
     const getCartQuantity = () => { return cartList.reduce( (sum, item) => sum + item.quantity,0) }
 
-    const updateQuantity = (item, quantity) =>{
-      let currentQuantity = getCurrentQuantity(item.id)
-      removeItemByID(item.id)
-      addItem(item, quantity + currentQuantity)
-    }
+    const updateQuantity = (id, quantity) =>{ cartList.find(item => item.id === id).quantity += quantity }
     
     const addItem = (item, quantity) => {
         isInCart(item.id) ?
-          updateQuantity(item,quantity)
+          updateQuantity(item.id,quantity)
           :
           setCartList([...cartList, {...item, quantity:quantity}])
     }
@@ -49,7 +35,6 @@ const CartContextProvider = ({children}) => {
             isInCart,
             addItem,
             removeItemByID,
-            getCurrentQuantity,
             getSubtotalPrice,
             getTotalPrice,
             getCartQuantity,

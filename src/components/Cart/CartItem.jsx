@@ -9,7 +9,7 @@ function Cart({item, getSubtotalPrice, removeItemByID}) {
           <span className="col-2">{item.price} <img src={dai} alt="coin" style={{height:"20px", marginBottom:"0.2rem"}}/></span>
           <span className="col-1">{item.quantity}</span>
           <span className="col-2" >{getSubtotalPrice(item)} <img src={dai} alt="coin" style={{height:"20px", marginBottom:"0.2rem"}}/></span>
-          <button style={{marginLeft:"20px", all:"unset", cursor:"pointer"}} onClick={() => removeItemByID(parseInt(item.id))}> <img style={{width:"100%", height:"25px", marginRight:"1.4rem"}} src={deleteButton} alt="delete" /> </button> 
+          <button style={{marginLeft:"20px", all:"unset", cursor:"pointer"}} onClick={() => removeItemByID(item.id)}> <img style={{width:"100%", height:"25px", marginRight:"1.4rem"}} src={deleteButton} alt="delete" /> </button> 
         </div>
       </>
     )

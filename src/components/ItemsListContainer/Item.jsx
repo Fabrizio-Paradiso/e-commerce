@@ -32,7 +32,7 @@ export const Item = ({id,img,category,price,name}) => {
                                 justifyContent="center"
                                 position ="absolute"
                                 right={6}
-                                spacing={2}
+                                spacing={4}
                             >
                                 <Text style={{marginBottom:"0px", fontWeight:"bold"}}>{price}</Text>
                                 <Image height={15} src={dai}></Image>
@@ -40,7 +40,7 @@ export const Item = ({id,img,category,price,name}) => {
                             <Center>
                                 <Image objectFit="contain" marginTop={10} src={img} height={200} width={300}></Image>
                             </Center>
-                            <Stack alignItems="flex-start" className="my-2" spacing={0}>
+                            <Stack alignItems="flex-start" spacing={-10}>
                                 <Text >{category.charAt(0).toUpperCase()+category.slice(1)}</Text>
                                 <Text fontWeight="bold">{name}</Text>
                             </Stack>

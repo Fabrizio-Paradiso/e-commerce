@@ -8,12 +8,12 @@ const ItemCount = ({count, availableStock, handleCount}) => {
 
     return (
         <>
-        <div className="d-flex mx-auto my-2 justify-content-center" style={{paddingTop:"0.8rem"}}>
-            <button className="text-center mx-2 py-auto" style={{all:"unset", cursor:"pointer", backgroundColor:"#F58A1F", width:"20px", height:"25px" , boxShadow: "0px 1px black", border:"0.06rem black solid"}} disabled={count===0} onClick={substract}>
+        <div className="d-flex mx-auto justify-content-start" style={{paddingTop:"1.5rem"}}>
+            <button className="text-center py-auto" style={{all:"unset", cursor:"pointer", marginRight:"0.5rem", backgroundColor:"#F58A1F", width:"20px", height:"25px" , boxShadow: "0px 1px black", border:"0.06rem black solid"}} disabled={count===0} onClick={substract}>
                 <MinusIcon style={{fontSize:"0.9rem", fontWeight:"bold" ,color:"#fff"}}/>
             </button>
-            <span className="my-auto">Cantidad: {count}</span>
-            <button className="text-center mx-2 p-auto" style={{all:"unset", cursor:"pointer", backgroundColor:"#F58A1F", width:"20px", height:"25px" , boxShadow: "0px 1px black", border:"0.06rem black solid"}} disabled={count===availableStock} onClick={addition}>
+            <span className="my-auto">Quantity: {count}</span>
+            <button className="text-center p-auto" style={{all:"unset", cursor:"pointer",  marginLeft:"0.5rem", backgroundColor:"#F58A1F", width:"20px", height:"25px" , boxShadow: "0px 1px black", border:"0.06rem black solid"}} disabled={count===availableStock} onClick={addition}>
                 <AddIcon style={{fontSize:"0.9rem", fontWeight:"bold" ,color:"#fff"}}/>
             </button>
         </div>

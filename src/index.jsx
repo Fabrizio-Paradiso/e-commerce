@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.css';
-// import getFirestoreApp from './firebase/config'
+import getFirestoreApp from './firebase/firebase'
 
-// getFirestoreApp()
+getFirestoreApp()
 
 ReactDOM.render(<App />,document.getElementById('root')
 );

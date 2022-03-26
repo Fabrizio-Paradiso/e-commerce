@@ -11,7 +11,10 @@ const CartContextProvider = ({children}) => {
 
     const clearCart = () => { setCartList ([]) }
 
-    const removeItemByID = (id) => { setCartList ( cartList.filter ( (item) => item.id !== id) )}
+    const removeItemByID = (id) => {
+      console.log(id) 
+      setCartList ( cartList.filter ( (item) => item.id !== id) )
+    }
 
     const getSubtotalPrice = (item) => { return item.quantity*item.price  }
 

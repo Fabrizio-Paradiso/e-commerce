@@ -35,7 +35,7 @@ export const Item = ({id,img,category,price,name}) => {
                                 spacing={4}
                             >
                                 <Text style={{marginBottom:"0px", fontWeight:"bold"}}>{price}</Text>
-                                <Image height={15} src={dai}></Image>
+                                <Image height={15} style={{marginBottom:"0.1rem"}} src={dai}></Image>
                             </Stack>
                             <Center>
                                 <Image objectFit="contain" marginTop={10} src={img} height={200} width={300}></Image>

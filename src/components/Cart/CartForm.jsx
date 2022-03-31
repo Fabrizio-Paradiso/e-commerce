@@ -28,6 +28,20 @@ const CartForm = () => {
             window.location = "/"
         })
         .catch(err => console.error(err))
+
+      const queryCollection = collection(db, 'items')
+
+      const queryActulizarStock = query(queryCollection, where( documentId() , 'in', cartList.map(it => it.id) ))
+
+      const batch = writeBatch(db)
+
+      await getDocs(queryActulizarStock)
+        .then(resp => resp.docs.forEach(res => batch.update(res.ref, {
+            stock: res.data().stock - cartList.find(item => item.id === res.id).quantity
+      }) ))
+
+      batch.commit()
+
     }
 
     const handleOnChange = (e) => { setDataForm({...dataForm, [e.target.name] : e.target.value })}

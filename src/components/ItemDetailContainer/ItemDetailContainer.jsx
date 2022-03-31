@@ -20,8 +20,6 @@ export const ItemDetailContainer = () => {
         .finally(()=> setLoading(false))    
     }, [id])
 
-    console.log(item.stock)
-
     return (
         <div className="row text-center py-3 px-auto">
             {

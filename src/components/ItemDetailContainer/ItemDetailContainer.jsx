@@ -6,6 +6,7 @@ import { collection, getDocs, getFirestore} from "firebase/firestore"
 
 export const ItemDetailContainer = () => {
     const [item, setItem] = useState([])
+    // const [itemStock, setItemStock] = useState(0)
     const [loading, setLoading] = useState(false)
     const { id } = useParams ()
   
@@ -19,13 +20,15 @@ export const ItemDetailContainer = () => {
         .finally(()=> setLoading(false))    
     }, [id])
 
+    console.log(item.stock)
+
     return (
         <div className="row text-center py-3 px-auto">
             {
                 loading? 
                 (<Loader/>) 
                 : 
-                (<ItemDetail item={item}/>)
+                (<ItemDetail item={item} stock={item.stock}/>)
             }
         </div>
     )

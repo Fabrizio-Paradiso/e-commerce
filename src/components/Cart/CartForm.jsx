@@ -1,4 +1,4 @@
-import { addDoc, collection, getFirestore} from "firebase/firestore"   
+import { addDoc, collection, documentId, getFirestore, query, getDocs, where, writeBatch} from "firebase/firestore"   
 import { useState } from "react";
 import CartContextProvider, { useCartContext } from '../../context/CartContext'
 
@@ -16,15 +16,16 @@ const CartForm = () => {
             let id    = cartItem.id;
             let name  = cartItem.name;
             let price = getSubtotalPrice(cartItem);
+            let quantity = cartItem.quantity
 
-            return {id, name, price}
+            return {id, name, price, quantity}
         })
         const db = getFirestore()
         const queryCollectionOrders = collection(db, 'orders')
         addDoc(queryCollectionOrders, order)
         .then(resp =>{
             alert(`Your Order ID: ${resp.id}`);
-            window.location ="/"
+            window.location = "/"
         })
         .catch(err => console.error(err))
     }

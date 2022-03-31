@@ -4,11 +4,11 @@ import shop from "../../imgs/icons/shop.svg"
 import clear from "../../imgs/icons/clear.svg"   
 import dai from "../../imgs/icons/dai.png"   
 import emptyCart from "../../imgs/icons/emptyCart.svg"
-import {Link} from 'react-router-dom'   
-
+import {Link} from 'react-router-dom'
 
 export const Cart = () => {
     const {cartList, getSubtotalPrice, getTotalPrice, removeItemByID, clearCart} = useCartContext(CartContextProvider)
+
     return(
         <>
             {
@@ -29,9 +29,14 @@ export const Cart = () => {
                             }
                         </>
                         <div className="cart-footer d-flex justify-content-between align-items-center" style={{margin:"0 2rem 0 2.9rem"}}>
-                            <button style={{all:"unset", margin:"3rem 0 0 2.5rem",cursor:"pointer",backgroundColor:"#F58A1F", width:"150px", height:"30px" , boxShadow: "0px 1px black", border:"0.06rem black solid"}} onClick={clearCart}><span style={{ paddingLeft:"0.7rem", fontSize:"1.1rem", fontWeight:"bold", borderBottom:"2rem" ,color:"#fff", textShadow: "1.2px 1px 0.5px black"}}> Empty Cart<img src={clear} alt="shop-bag" style={{height:"23px", paddingLeft:"0.3rem"}}/></span></button>
-                            <h3 style={{marginTop:"3rem", marginRight:"3rem", fontSize:"1.5rem", fontWeight:"bold"}}>Total Price: {getTotalPrice()} <img src={dai} alt="coin" style={{height:"25px" , marginBottom:"0.3rem"}}/> </h3>
+                            <button style={{all:"unset", margin:"3rem 0 0 2.5rem",cursor:"pointer",backgroundColor:"#F58A1F", width:"150px", height:"30px" , boxShadow: "0px 1px black", border:"0.06rem black solid"}} onClick={clearCart}><span style={{ paddingLeft:"0.7rem", fontSize:"1.1rem", fontWeight:"bold", borderBottom:"2rem" ,color:"#fff", textShadow: "1.2px 1px 0.5px black"}}>Empty Cart<img src={clear} alt="shop-bag" style={{height:"23px", paddingLeft:"0.3rem"}}/></span></button>
+                            <div>
+                                <h3 style={{marginTop:"3rem", marginRight:"3rem", fontSize:"1.5rem", fontWeight:"bold"}}>Total Price: {getTotalPrice()} <img src={dai} alt="coin" style={{height:"25px" , marginBottom:"0.3rem"}}/> </h3>
+                            </div>
                         </div>
+                        <Link to={"/form"} style={{textDecoration:'inherit', color:'inherit'}}>   
+                            <button style={{all:"unset", margin:"2rem 0 0 5.4rem",cursor:"pointer",backgroundColor:"#F58A1F", width:"150px", height:"30px" , boxShadow: "0px 1px black", border:"0.06rem black solid"}}><span style={{ paddingLeft:"0.7rem", fontSize:"1.1rem", fontWeight:"bold", borderBottom:"2rem" ,color:"#fff", textShadow: "1.2px 1px 0.5px black"}}>Complete Form</span></button>
+                        </Link>  
                     </>
                     :
                     <>

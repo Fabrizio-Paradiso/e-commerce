@@ -35,7 +35,7 @@ export const Cart = () => {
                             </div>
                         </div>
                         <Link to={"/form"} style={{textDecoration:'inherit', color:'inherit'}}>   
-                            <button style={{all:"unset", margin:"2rem 0 0 5.4rem",cursor:"pointer",backgroundColor:"#F58A1F", width:"150px", height:"30px" , boxShadow: "0px 1px black", border:"0.06rem black solid"}}><span style={{ paddingLeft:"0.7rem", fontSize:"1.1rem", fontWeight:"bold", borderBottom:"2rem" ,color:"#fff", textShadow: "1.2px 1px 0.5px black"}}>Complete Form</span></button>
+                            <button style={{all:"unset", margin:"2rem 0 0 5.4rem",cursor:"pointer",backgroundColor:"#F58A1F", width:"150px", height:"30px" , boxShadow: "0px 1px black", border:"0.06rem black solid"}}><span style={{ paddingLeft:"0.7rem", fontSize:"1.1rem", fontWeight:"bold", borderBottom:"2rem" ,color:"#fff", textShadow: "1.2px 1px 0.5px black"}}>Continue Purchase</span></button>
                         </Link>  
                     </>
                     :

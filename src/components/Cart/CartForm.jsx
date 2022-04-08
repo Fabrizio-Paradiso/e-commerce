@@ -1,6 +1,7 @@
 import { addDoc, collection, documentId, getFirestore, query, getDocs, where, writeBatch} from "firebase/firestore"   
 import { useState } from "react";
 import CartContextProvider, { useCartContext } from '../../context/CartContext'
+import validator from 'validator'
 
 const CartForm = () => {
     const [dataForm, setDataForm] = useState({name:'', phone:'', email:'', emailCheck:''})
@@ -46,17 +47,26 @@ const CartForm = () => {
 
     const handleOnChange = (e) => { setDataForm({...dataForm, [e.target.name] : e.target.value })}
 
-    const emailValidation = (e) => {
-      e.preventDefault() 
-      dataForm.email === dataForm.emailCheck?  createOrder(e) : setMessage("Check Email is not correct")
+    const validatePhone = () => { return validator.isNumeric((dataForm.phone))?  null : setMessage("Please enter only numbers") }
+    
+    const validateInput = () => { return (dataForm.name.trim() && dataForm.phone.trim() && dataForm.email.trim() && dataForm.emailCheck.trim())? null : setMessage("Complete all fields")}
+
+    const validateEmail = () => { return validator.isEmail(dataForm.email)? null : setMessage("Enter valid Email") }
+
+    const validateEmailCheck = () => { return (dataForm.email === dataForm.emailCheck)? null : setMessage("Check Email is not correct")}
+
+    const checkValidations = () => { return(validatePhone()===null  && validateInput()===null && validateEmail()===null && validateEmailCheck()===null )? true : false }
+
+    const formValidation = (e) => {
+      e.preventDefault()
+      return checkValidations()? createOrder(e) : null 
     }
 
     return (
         <>
         <div className="row mx-auto py-5" style={{marginTop:'2.5rem', width:'600px', height:'500px', borderRadius: '10px! important', boxShadow:" rgba(0, 0, 0, 0.35) 0px 5px 15px"}}>
           <h2 className="text-center" style={{fontSize:"1.9rem", fontWeight:"bold", borderBottom:"2rem", color:"#F58A1F", textShadow: "1.2px 1px 0.5px black"}} > Purchase Form </h2>
-          <form className="row mx-auto col-lg-10 mt-3" onSubmit = {createOrder} onChange={handleOnChange}>
-            <div className="d-flex flex-column">
+          <form className="row d-flex flex-column mx-auto col-lg-10 mt-3" onSubmit = {createOrder} onChange={handleOnChange}>
             <label htmlFor="name" className="label" style={{marginLeft:"1.7rem" , fontWeight:"bold"}}>Name</label>
                 <input
                   className="mx-auto mt-1 mb-2 form-control"
@@ -100,10 +110,9 @@ const CartForm = () => {
                     required
                   />
                   {
-                    message!==''? <small style={{color:"red", paddingLeft:"2rem"}}>{message}</small> : null
+                    message!==''? <small style={{color:"red", paddingLeft:"2.5rem"}}>{message}</small> : null
                   }               
-              <button type="submit" onClick = {emailValidation} className="text-center mx-auto px-auto" style={{all:"unset", marginTop:"1rem", cursor:"pointer", backgroundColor:"#F58A1F", width:"150px", height:"30px" , boxShadow: "0px 1px black", border:"0.06rem black solid"}}> <span style={{ fontSize:"1.1rem", fontWeight:"bold", borderBottom:"2rem" ,color:"#fff", textShadow: "1.2px 1px 0.5px black"}}> Submit Order </span> </button>
-            </div>
+              <button type="submit" onClick = {formValidation} className="text-center mx-auto px-auto" style={{all:"unset", marginTop:"1rem", cursor:"pointer", backgroundColor:"#F58A1F", width:"150px", height:"30px" , boxShadow: "0px 1px black", border:"0.06rem black solid"}}> <span style={{ fontSize:"1.1rem", fontWeight:"bold", borderBottom:"2rem" ,color:"#fff", textShadow: "1.2px 1px 0.5px black"}}> Submit Order </span> </button>
           </form>
         </div>
         </>

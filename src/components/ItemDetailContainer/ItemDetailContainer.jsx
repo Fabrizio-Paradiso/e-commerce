@@ -6,7 +6,6 @@ import { collection, getDocs, getFirestore} from "firebase/firestore"
 
 export const ItemDetailContainer = () => {
     const [item, setItem] = useState([])
-    // const [itemStock, setItemStock] = useState(0)
     const [loading, setLoading] = useState(false)
     const { id } = useParams ()
   

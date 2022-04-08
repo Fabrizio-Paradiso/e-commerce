@@ -8,7 +8,7 @@ import {Link} from 'react-router-dom'
 
 export const ItemDetail = ({item}) => {
   
-  const [currentCart, setCurrentCart] = useState(0)
+  const [currentCart, setCurrentCart] = useState(1)
   const [clickAdd, setClickAdd] = useState(false)
   const { addItem } = useCartContext(CartContextProvider)
 

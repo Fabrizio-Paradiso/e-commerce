@@ -5,15 +5,15 @@ import dai from "../../imgs/icons/dai.png"
 export const Item = ({id,img,category,price,name}) => {
     return  (
 
-        <div className='col-md-3'>
+        <div className='items'>
             <Link to ={`/detail/${id}`} style={{textDecoration:'inherit', color:'inherit'}}>
                 <Box >   
                     <Box style={{boxShadow:" rgba(0, 0, 0, 0.35) 0px 5px 15px"}}
                         backgroundColor="white"
                         padding={6}
                         position="relative"
-                        margin={50}
                         width={250}
+                        margin={35}
                         height={300}
                     >
                         <Stack>

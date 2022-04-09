@@ -24,9 +24,9 @@ function NavBar () {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mx-auto text-center">
-              <NavLink to="/category/accesories" style={{textDecoration:'inherit', color:'#f58a1f', fontWeight:"bolder", padding:"0 3.9rem 0 3rem", textShadow: "1.2px 1px 0.5px black"}} >Accesories</NavLink>
-              <NavLink to="/category/clothing" style={{textDecoration:'inherit', color:'#f58a1f', fontWeight:"bolder", padding:"0 3.9rem 0 3rem", textShadow: "1.2px 1px 0.5px black"}} >Clothing</NavLink>
-              <NavLink to="/category/shoes"  style={{textDecoration:'inherit', color:'#f58a1f', fontWeight:"bolder", padding:"0 3.9rem 0 3rem", textShadow: "1.2px 1px 0.5px black"}}>Shoes</NavLink>
+              <NavLink to="/category/accesories" style={{textDecoration:'inherit', color:'#f58a1f', fontWeight:"bolder", padding:"0 2rem 0 2rem", textShadow: "1.2px 1px 0.5px black"}} >Accesories</NavLink>
+              <NavLink to="/category/clothing" style={{textDecoration:'inherit', color:'#f58a1f', fontWeight:"bolder", padding:"0 2rem 0 2rem", textShadow: "1.2px 1px 0.5px black"}} >Clothing</NavLink>
+              <NavLink to="/category/shoes"  style={{textDecoration:'inherit', color:'#f58a1f', fontWeight:"bolder", padding:"0 2rem 0 2rem", textShadow: "1.2px 1px 0.5px black"}}>Shoes</NavLink>
             </Nav>
             <Nav>
               <NavLink to="/cart" className="d-none d-md-block">

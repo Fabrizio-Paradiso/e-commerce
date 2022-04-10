@@ -42,15 +42,15 @@ export const ItemDetail = ({item}) => {
                   </div>
                 :
                     <div className='d-flex' style={{paddingTop:"0.1rem"}}>
-                    <Link to={"/"} style={{textDecoration:'inherit', color:'inherit'}}>
-                      <button className="text-center px-auto" style={{all:"unset", marginTop:"1rem", marginRight:"1.5rem", cursor:"pointer", backgroundColor:"#F58A1F", width:"200px", boxShadow: "0px 1px black",  border:"0.06rem black solid"}}>
-                            <span style={{fontSize:"1rem", fontWeight:"bold", color:"#fff", textShadow: "1.2px 1px 0.5px black"}}>Continue Shopping <img src={shopping} alt="shop-bag" style={{height:"22px", paddingBottom:"0.2rem"}} ></img> </span>
-                      </button>
-                    </Link>
                     <Link to={"/cart"} style={{textDecoration:'inherit', color:'inherit'}}>            
-                        <button className="text-center px-auto" style={{all:"unset", marginTop:"1rem", cursor:"pointer", backgroundColor:"#F58A1F", width:"160px", boxShadow: "0px 1px black", border:"0.06rem black solid"}}>
+                        <button className="text-center px-auto" style={{all:"unset", marginTop:"1rem",  marginRight:"1.5rem", cursor:"pointer", backgroundColor:"#F58A1F", width:"160px", boxShadow: "0px 1px black", border:"0.06rem black solid"}}>
                           <span style={{fontSize:"1rem", fontWeight:"bold", color:"#fff", textShadow: "1.2px 1px 0.5px black"}}> Shopping Cart <img src={addToCart} alt="shop-bag" style={{height:"20px"}} ></img> </span>
                         </button>
+                    </Link>
+                    <Link to={"/"} style={{textDecoration:'inherit', color:'inherit'}}>
+                      <button className="text-center px-auto" style={{all:"unset", marginTop:"1rem", cursor:"pointer", backgroundColor:"#F58A1F", width:"200px", boxShadow: "0px 1px black",  border:"0.06rem black solid"}}>
+                            <span style={{fontSize:"1rem", fontWeight:"bold", color:"#fff", textShadow: "1.2px 1px 0.5px black"}}>Continue Shopping <img src={shopping} alt="shop-bag" style={{height:"22px", paddingBottom:"0.2rem"}} ></img> </span>
+                      </button>
                     </Link>
                     </div>
             }

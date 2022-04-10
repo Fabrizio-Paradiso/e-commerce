@@ -55,7 +55,7 @@ const CartForm = () => {
 
     const validateEmailCheck = () => { return (dataForm.email === dataForm.emailCheck)? null : setMessage("Check Email is not correct")}
 
-    const checkValidations = () => { return(validatePhone()===null  && validateInput()===null && validateEmail()===null && validateEmailCheck()===null )? true : false }
+    const checkValidations = () => { return(validateInput()===null  && validatePhone()===null && validateEmail()===null && validateEmailCheck()===null )? true : false }
 
     const formValidation = (e) => {
       e.preventDefault()

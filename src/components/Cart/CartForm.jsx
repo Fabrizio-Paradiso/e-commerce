@@ -32,11 +32,11 @@ const CartForm = () => {
 
       const queryCollection = collection(db, 'items')
 
-      const queryActulizarStock = query(queryCollection, where( documentId() , 'in', cartList.map(it => it.id) ))
+      const queryUpdateStock = query(queryCollection, where( documentId() , 'in', cartList.map(it => it.id) ))
 
       const batch = writeBatch(db)
 
-      await getDocs(queryActulizarStock)
+      await getDocs(queryUpdateStock)
         .then(resp => resp.docs.forEach(res => batch.update(res.ref, {
             stock: res.data().stock - cartList.find(item => item.id === res.id).quantity
       }) ))

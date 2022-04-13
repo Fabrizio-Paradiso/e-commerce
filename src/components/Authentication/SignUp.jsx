@@ -24,7 +24,7 @@ const SignUp = () => {
 
     const validateEmail = () => { return validator.isEmail(dataForm.email)? null : setMessage("Enter valid Email") }
 
-    const validateCheckPassword = () => { return (dataForm.password === dataForm.checkPassword)? null : setMessage("Check Email is not correct")}
+    const validateCheckPassword = () => { return (dataForm.password === dataForm.checkPassword)? null : setMessage("Passwords do not match")}
 
     const checkValidations = () => { return(validateInput()===null  && validateEmail()===null && validateCheckPassword()===null )? true : false }
 

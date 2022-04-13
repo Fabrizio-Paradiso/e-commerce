@@ -7,6 +7,8 @@ export const useCartContext = () => useContext(CartContext)
 const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState([])
     const [cartQuantity, setCartQuantity] = useState(0)
+    const [shipping] = useState(20)
+    const [taxes] = useState(0)
 
     useEffect(() => {
       getCartQuantity()
@@ -20,7 +22,11 @@ const CartContextProvider = ({children}) => {
 
     const getSubtotalPrice = (item) => { return item.quantity*item.price  }
 
+    const getTaxes = () => { return 0.05*getTotalPrice()  }
+
     const getTotalPrice = () => { return cartList.reduce( (sum, item) => sum + getSubtotalPrice(item),0) }
+
+    const getFinalPrice = () => { return (getTotalPrice() + getTaxes() + shipping) }
 
     const getCartQuantity = () => { setCartQuantity(cartList.reduce( (sum, item) => sum + item.quantity,0)) }
 
@@ -44,9 +50,13 @@ const CartContextProvider = ({children}) => {
             removeItemByID,
             getSubtotalPrice,
             getTotalPrice,
+            getFinalPrice,
+            getTaxes,
             getCartQuantity,
             updateQuantity,
-            clearCart
+            clearCart,
+            shipping,
+            taxes
           }}>
           {children}
         </CartContext.Provider>

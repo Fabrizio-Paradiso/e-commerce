@@ -11,9 +11,10 @@ const SignUp = () => {
         e.preventDefault()
         try {
             await signup(dataForm.email, dataForm.password)
+            window.location="/"
         }
         catch(error){
-            setMessage('Server Error');
+            setMessage('Server Error, please try again');
             setTimeout(() => setMessage(''), 1500);
         } 
     }
@@ -48,7 +49,7 @@ const SignUp = () => {
                         placeholder="user@example.com"
                         required
                       />            
-                    <label htmlFor="password" className="label" style={{marginLeft:"1.7rem" , fontWeight:"bold"}}>Password</label>  
+                    <label htmlFor="password" className="label" style={{marginLeft:"1.7rem" , fontWeight:"bold"}}>Password (at least 8 characters)</label>  
                       <input
                         className="mx-auto mt-1 mb-2 form-control"
                         style={{width:"400px"}}
@@ -57,7 +58,7 @@ const SignUp = () => {
                         placeholder="Password"
                         required
                       />
-                    <label htmlFor="password" className="label" style={{marginLeft:"1.7rem" , fontWeight:"bold"}}>Repeat Password</label>  
+                    <label htmlFor="password" className="label" style={{marginLeft:"1.7rem" , fontWeight:"bold"}}>Repeat Password  (at least 8 characters)</label>  
                       <input
                         className="mx-auto mt-1 mb-2 form-control"
                         style={{width:"400px"}}

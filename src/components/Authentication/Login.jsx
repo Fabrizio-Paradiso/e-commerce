@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
-import CartContextProvider, { useCartContext } from '../../context/CartContext'
 import {Link} from 'react-router-dom'
 import success from "../../imgs/icons/success.jpg"   
 
@@ -8,14 +7,11 @@ const LogIn = () => {
     const [dataForm, setDataForm] = useState({email:'', password:''})
     const [message, setMessage] = useState("")
     const { login, currentUser } = useAuth()
-    const {purchaseActive} = useCartContext(CartContextProvider)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
             await login(dataForm.email, dataForm.password)
-            console.log(purchaseActive)
-            purchaseActive ? <Link to="/cart" replace /> : <Link to="/" replace/>
           } catch (error) {
             console.log(error)
             setMessage('Wrong Credentials');

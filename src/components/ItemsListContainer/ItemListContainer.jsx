@@ -53,7 +53,7 @@ export const ItemListContainer = () => {
                             justifyContent="center"
                             spacing={4}
                         >
-                            <Text id="Most Recent" color={ sort === String("Most Recent")? "#fff":"#f58a1f" } textShadow={ sort === String("Most Recent")? "1.2px 1px 0.5px black":"0.25px 0.9px 0.9px  black" } style={{marginBottom:"0px", fontWeight:"bold"}}>Most Recent</Text>
+                            <Text id="Most Recent" color={ sort === String("Most Recent")? "#fff":"#f58a1f" } textShadow={ sort === String("Most Recent")? "1.2px 1px 0.5px black":"0.9px 0.9px  black" } style={{marginBottom:"0px", fontWeight:"bold"}}>Most Recent</Text>
                         </Stack>
                     </Button>
                 </Stack>

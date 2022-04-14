@@ -75,35 +75,52 @@ export const Cart = () => {
                                                 </div>
                                                 <div className="cart-summary col-3 text-center d-flex flex-column align-items-center mx-auto" style={{ marginTop:"3rem"}}>
                                                     <h2 style={{fontWeight:"bold", color:"#F58A1F", textShadow: "1.2px 1px 0.5px gray"}}> <img src={summary} alt="shop-bag" style={{height:"60px", paddingBottom:"0.4rem", paddingRight:"0.2rem"}}/>Summary</h2>
-                                                    <div className="cart-summary-prices" style={{boxShadow:" rgba(0, 0, 0, 0.35) 0px 5px 15px" ,marginTop:"0.4rem"}}>
-                                                        <div className="d-flex justify-content-between" style={{padding:"0.4rem 2rem 0 2rem"}}>
+                                                    <div className="cart-summary-prices" style={{boxShadow:" rgba(0, 0, 0, 0.35) 0px 5px 15px" ,marginTop:"0.4rem" , width:"20rem", height: currentUser?"27rem":"22rem"}}>
+                                                        <div className="d-flex justify-content-between align-items center my-auto" style={{padding:"0.1rem 2rem 0 2rem"}}>
                                                             <h3 style={{paddingTop:"1rem", fontSize:"1.2rem"}}>Subtotal:</h3>
-                                                            <h3 style={{paddingTop:"1rem", fontSize:"1.2rem"}}>{getTotalPrice().toFixed(2)} <img src={dai} alt="coin" style={{height:"25px" , marginBottom:"0.3rem"}}/></h3>
+                                                            <h3 style={{paddingTop:"1rem", fontSize:"1.2rem"}}>{getTotalPrice().toFixed(2)} <img src={dai} alt="coin" style={{height:"20px" , marginBottom:"0.3rem"}}/></h3>
                                                         </div>
-                                                        <div className="d-flex justify-content-between" style={{padding:"0.4rem 2rem 0 2rem"}}>
+                                                        <div className="d-flex justify-content-between align-items center my-auto" style={{padding:"0.1rem 2rem 0 2rem"}}>
                                                             <h3 style={{paddingTop:"1rem", fontSize:"1.2rem"}}>Shipping:</h3>
-                                                            <h3 style={{paddingTop:"1rem", fontSize:"1.2rem"}}>{shipping.toFixed(2)} <img src={dai} alt="coin" style={{height:"25px" , marginBottom:"0.3rem"}}/></h3>
+                                                            <h3 style={{paddingTop:"1rem", fontSize:"1.2rem"}}>{shipping.toFixed(2)} <img src={dai} alt="coin" style={{height:"20px" , marginBottom:"0.3rem"}}/></h3>
                                                         </div>
-                                                        <div className="d-flex justify-content-between" style={{padding:"0.4rem 2rem 0 2rem"}}>
+                                                        <div className="d-flex justify-content-between align-items center my-auto" style={{padding:"0.1rem 2rem 0 2rem"}}>
                                                             <h3 style={{paddingTop:"1rem", fontSize:"1.2rem"}}>Taxes:</h3>
-                                                            <h3 style={{paddingTop:"1rem", fontSize:"1.2rem"}}>{getTaxes().toFixed(2)} <img src={dai} alt="coin" style={{height:"25px" , marginBottom:"0.3rem"}}/></h3>
+                                                            <h3 style={{paddingTop:"1rem", fontSize:"1.2rem"}}>{getTaxes().toFixed(2)} <img src={dai} alt="coin" style={{height:"20px" , marginBottom:"0.3rem"}}/></h3>
                                                         </div>
-                                                        <div className="d-flex justify-content-between" style={{padding:"0.4rem 2rem 0 2rem"}}>
+                                                        <div className="d-flex justify-content-between align-items center my-auto" style={{padding:"0.1rem 2rem 0 2rem"}}>
                                                             <h3 style={{paddingTop:"1rem", fontSize:"1.2rem", fontWeight:"bold"}}>Total:</h3>
-                                                            <h3 style={{paddingTop:"1rem", fontSize:"1.2rem", fontWeight:"bold"}}>{getFinalPrice().toFixed(2)} <img src={dai} alt="coin" style={{height:"25px" , marginBottom:"0.3rem"}}/></h3>
+                                                            <h3 style={{paddingTop:"1rem", fontSize:"1.2rem", fontWeight:"bold"}}>{getFinalPrice().toFixed(2)} <img src={dai} alt="coin" style={{height:"20px" , marginBottom:"0.3rem"}}/></h3>
                                                         </div>
-                                                        <button style={{all:"unset", marginTop:"1.2rem",cursor:"pointer",backgroundColor:"#CA0B00", width:"150px", height:"30px" , boxShadow: "0px 1px black", border:"0.06rem black solid"}} onClick={clearCart}><span style={{ fontSize:"1.1rem", fontWeight:"bold", borderBottom:"2rem" ,color:"#fff", textShadow: "1.2px 1px 0.5px black"}}>Empty Cart<img src={clear} alt="shop-bag" style={{height:"23px", paddingLeft:"0.3rem"}}/></span></button>
-                                                        {
-                                                            currentUser?
-                                                            <Link to={"/form"} style={{textDecoration:'inherit', color:'inherit'}}>   
-                                                                <button style={{all:"unset", marginTop:"1.8rem", marginBottom:"2rem", cursor:"pointer",backgroundColor:"#6AA303", width:"150px", height:"30px" , boxShadow: "0px 1px black", border:"0.06rem black solid"}}><span style={{ fontSize:"1.1rem", fontWeight:"bold", borderBottom:"2rem" ,color:"#fff", textShadow: "1.2px 1px 0.5px black"}} onClick={createOrder}>Purchase <img src={purchase} alt="shop-bag" style={{height:"23px", paddingLeft:"0.1rem"}}/></span></button>
-                                                            </Link>
-                                                            :
-                                                            <Link to={"/login"} style={{textDecoration:'inherit', color:'inherit'}}>   
-                                                                <button style={{all:"unset", marginTop:"1.8rem", marginBottom:"2rem", cursor:"pointer",backgroundColor:"#F58A1F", width:"150px", height:"30px" , boxShadow: "0px 1px black", border:"0.06rem black solid"}}><span style={{ fontSize:"1.1rem", fontWeight:"bold", borderBottom:"2rem" ,color:"#fff", textShadow: "1.2px 1px 0.5px black"}}>Login</span></button>
-                                                            </Link>
-                                                        }
-                        
+                                                        <div className="d-flex flex-column mx-auto">
+                                                            
+                                                            {
+                                                              currentUser?
+                                                                (
+                                                                    <>
+                                                                        <h3 style={{paddingTop:"1rem", fontSize:"1.2rem", fontWeight:"bold"}}>Continue as</h3>    
+                                                                        <span style={{paddingTop:"0.5rem", fontSize:"1rem", fontWeight:"bold"}}>{currentUser.email}</span>
+                                                                                  
+                                                                    </>
+                                                                )
+                                                                :
+                                                                null  
+                                                            }
+
+                                                            <button style={{all:"unset", marginTop:"1.2rem",cursor:"pointer",backgroundColor:"#CA0B00", width:"150px", height:"30px" , boxShadow: "0px 1px black", border:"0.06rem black solid"}} onClick={clearCart} className="mx-auto"><span style={{ fontSize:"1.1rem", fontWeight:"bold", borderBottom:"2rem" ,color:"#fff", textShadow: "1.2px 1px 0.5px black"}}>Empty Cart<img src={clear} alt="shop-bag" style={{height:"23px", paddingLeft:"0.3rem"}}/></span></button>
+                                                            {
+                                                                currentUser?
+                                                                (
+                                                                <>    
+                                                                    <button style={{all:"unset", marginTop:"1.8rem", marginBottom:"2rem", cursor:"pointer",backgroundColor:"#6AA303", width:"150px", height:"30px" , boxShadow: "0px 1px black", border:"0.06rem black solid"}} className="mx-auto" ><span style={{ fontSize:"1.1rem", fontWeight:"bold", borderBottom:"2rem" ,color:"#fff", textShadow: "1.2px 1px 0.5px black"}} onClick={createOrder}>Purchase <img src={purchase} alt="shop-bag" style={{height:"23px", paddingLeft:"0.1rem"}}/></span></button>
+                                                                </>
+                                                                )
+                                                                :
+                                                                (<Link to={"/login"} style={{textDecoration:'inherit', color:'inherit'}}>   
+                                                                    <button style={{all:"unset", marginTop:"1.8rem", marginBottom:"2rem", cursor:"pointer",backgroundColor:"#F58A1F", width:"150px", height:"30px" , boxShadow: "0px 1px black", border:"0.06rem black solid"}}><span style={{ fontSize:"1.1rem", fontWeight:"bold", borderBottom:"2rem" ,color:"#fff", textShadow: "1.2px 1px 0.5px black"}}>Login</span></button>
+                                                                </Link>)
+                                                            }
+                                                        </div>
                                                         </div>
                                                     </div>  
                                                 </div>

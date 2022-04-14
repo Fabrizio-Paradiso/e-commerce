@@ -53,7 +53,7 @@ export const ItemListContainer = () => {
                             justifyContent="center"
                             spacing={4}
                         >
-                            <Text id="Most Recent" color={ sort === String("Most Recent")? "#fff":"#f58a1f" } textShadow={ sort === String("Most Recent")? "1.2px 1px 0.5px black":"0.25px 0.8px 0.8px black" } style={{marginBottom:"0px", fontWeight:"bold"}}>Most Recent</Text>
+                            <Text id="Most Recent" color={ sort === String("Most Recent")? "#fff":"#f58a1f" } textShadow={ sort === String("Most Recent")? "1.2px 1px 0.5px black":"0.25px 0.9px 0.9px  black" } style={{marginBottom:"0px", fontWeight:"bold"}}>Most Recent</Text>
                         </Stack>
                     </Button>
                 </Stack>
@@ -75,7 +75,7 @@ export const ItemListContainer = () => {
                             justifyContent="center"
                             spacing={4}
                         >
-                            <Text id="Highest Price" color={ sort === String("Highest Price")? "#fff":"#f58a1f" } textShadow={ sort === String("Highest Price")? "1.2px 1px 0.5px black":"0.25px 0.8px 0.8px black" } style={{marginBottom:"0px", fontWeight:"bold"}}>Highest Price</Text>
+                            <Text id="Highest Price" color={ sort === String("Highest Price")? "#fff":"#f58a1f" } textShadow={ sort === String("Highest Price")? "1.2px 1px 0.5px black":"0.9px 0.9px  black" } style={{marginBottom:"0px", fontWeight:"bold"}}>Highest Price</Text>
                         </Stack>
                     </Button>
                 </Stack>
@@ -97,7 +97,7 @@ export const ItemListContainer = () => {
                             justifyContent="center"
                             spacing={4}
                         >
-                            <Text id="Lowest Price" color={ sort === String("Lowest Price")? "#fff":"#f58a1f" } textShadow={ sort === String("Lowest Price")? "1.2px 1px 0.5px black":"0.25px 0.8px 0.8px black" }  style={{marginBottom:"0px", fontWeight:"bold"}}>Lowest Price</Text>
+                            <Text id="Lowest Price" color={ sort === String("Lowest Price")? "#fff":"#f58a1f" } textShadow={ sort === String("Lowest Price")? "1.2px 1px 0.5px black":"0.9px 0.9px  black" }  style={{marginBottom:"0px", fontWeight:"bold"}}>Lowest Price</Text>
                         </Stack>
                     </Button>
                 </Stack>

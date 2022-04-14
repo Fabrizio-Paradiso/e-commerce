@@ -8,16 +8,16 @@ RosarioStore is a website that allows the Rosario community to acquire the best 
 
 ### `npm install react-router-dom`
 
-Para permitir que en la aplicación web se pueda implementar un ruteo dinámico
+To allow the web application to implement dynamic routing
 
 ### `npm install react-bootstrap@next bootstrap@5.1.3`
 
-Para utilizar la version 5.1.3 del framework que es una gran herramienta para el diseño web
+To use version 5.1.3 of the framework which is a great tool for web design
 
 ### `npm install @chakra-ui/icons`
 
-Para utilizar una serie de iconos comúnmente utilizados en el diseño web que provee Chakra
+To use a series of icons commonly used in web design provided by Chakra
 
 ### `npm install @chakra-ui/react`
 
-Para utilizar los componentes de React que provee Chakra que facilitan el diseño de la web
+To use the React components provided by Chakra that facilitate web design

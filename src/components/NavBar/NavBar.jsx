@@ -35,8 +35,8 @@ function NavBar () {
                 <NavLink to="/login"  style={{textDecoration:'inherit', color:'#f58a1f', fontWeight:"bolder", padding:"0 2rem 0 2rem", textShadow: "1.2px 1px 0.5px black"}}>Login</NavLink>
                 :              
                 <NavLink to="/"  style={{textDecoration:'inherit', color:'#f58a1f', fontWeight:"bolder", padding:"0 2rem 0 2rem", textShadow: "1.2px 1px 0.5px black"}} onClick={logout}> 
-                  <svg stroke="currentColor" fill="currentColor" filter= "drop-shadow(1.2px 1px 0.5px black)" stroke-width="0" version="1.1" viewBox="0 0 16 16" height="2em" width="1em" xmlns="http://www.w3.org/2000/svg" style={{paddingBottom:"0.2rem"}}><path d="M9 11.041v-0.825c1.102-0.621 2-2.168 2-3.716 0-2.485 0-4.5-3-4.5s-3 2.015-3 4.5c0 1.548 0.898 3.095 2 3.716v0.825c-3.392 0.277-6 1.944-6 3.959h14c0-2.015-2.608-3.682-6-3.959z"></path></svg> 
-                  Log Out
+                  <svg stroke="currentColor" fill="currentColor" filter= "drop-shadow(1.2px 1px 0.5px black)" stroke-width="0" version="1.1" viewBox="0 0 16 16" height="2em" width="1em" xmlns="http://www.w3.org/2000/svg" style={{marginBottom:"0.2rem", marginLeft:"0.2rem"}}><path d="M9 11.041v-0.825c1.102-0.621 2-2.168 2-3.716 0-2.485 0-4.5-3-4.5s-3 2.015-3 4.5c0 1.548 0.898 3.095 2 3.716v0.825c-3.392 0.277-6 1.944-6 3.959h14c0-2.015-2.608-3.682-6-3.959z"></path></svg> 
+                  <span> Log Out </span>
                 </NavLink>
             }
             

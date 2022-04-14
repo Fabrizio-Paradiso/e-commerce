@@ -1,6 +1,6 @@
 # Fabrizio Paradiso [Perfil Linkedin](https://www.linkedin.com/in/fabrizioparadiso/)
 # RosarioStore
-RosarioStore es un sitio web que permite a la comunidad rosarina adquirir los mejores precios de las marcas más relevantes a nivel mundial
+RosarioStore is a website that allows the Rosario community to acquire the best prices of the most relevant brands worldwide
 
 # Funcionamiento
 

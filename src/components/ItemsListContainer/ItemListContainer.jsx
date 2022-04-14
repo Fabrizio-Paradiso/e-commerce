@@ -34,7 +34,7 @@ export const ItemListContainer = () => {
     return (
         <div className="row text-center py-3 px-auto">
             <Stack className="flex-row align-items-center" style={{marginBottom:"1rem"}}>
-                <Text style={{margin:"1rem 0 0rem 3rem", fontWeight:"bold", color:"black",  textShadow: "1px 1px 1px gray", display:"flex"}}>Sort By:</Text>
+                <Text style={{margin:"1.5rem 0 0rem 3rem", fontWeight:"bold", color:"black",  textShadow: "1px 1px 1px gray", display:"flex"}}>Sort By:</Text>
                 <Stack>
                     <Button onClick={handleSort} style={{all:"unset"}}>
                         <Stack

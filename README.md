@@ -2,7 +2,7 @@
 # RosarioStore
 RosarioStore is a website that allows the Rosario community to acquire the best prices of the most relevant brands worldwide
 
-# Funcionamiento
+# Running
 
 ![image](https://github.com/Fabrizio-Paradiso/e-commerce/blob/master/src/media/animation.gif)    
 

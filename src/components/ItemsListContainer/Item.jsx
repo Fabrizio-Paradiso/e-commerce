@@ -41,8 +41,8 @@ export const Item = ({id,img,category,price,name}) => {
                                 <Image objectFit="contain" marginTop={10} src={img} height={200} width={300}></Image>
                             </Center>
                             <Stack alignItems="flex-start" spacing={-10}>
-                                <Text >{category.charAt(0).toUpperCase()+category.slice(1)}</Text>
-                                <Text fontWeight="bold">{name}</Text>
+                                <Text style={{paddingLeft:"0.5rem"}}>{category.charAt(0).toUpperCase()+category.slice(1)}</Text>
+                                <Text style={{paddingLeft:"0.5rem"}} fontWeight="bold">{name}</Text>
                             </Stack>
                         </Stack>   
                     </Box>

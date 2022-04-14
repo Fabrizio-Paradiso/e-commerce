@@ -53,10 +53,14 @@ const LogIn = () => {
                                     placeholder="Password"
                                     required
                                   />
+                                  <Link to={"/signup"} style={{textDecoration:'inherit', color:'inherit'}}>   
+                                    <span style={{marginLeft:"1.7rem", fontSize:"1rem", fontWeight:"bold", color:"#0000FF", textDecoration:"underline"}}>Don't have an account yet? Sign Up here</span> 
+                                  </Link>     
                                   {
                                     message!==''? <small style={{color:"red", paddingLeft:"2.5rem"}}>{message}</small> : null
                                   }                   
                                   <button button type="submit" onClick = {handleSubmit} className="text-center mx-auto px-auto" style={{all:"unset", marginTop:"1rem", cursor:"pointer", backgroundColor:"#F58A1F", width:"100px", height:"30px" , boxShadow: "0px 1px black", border:"0.06rem black solid"}}> <span style={{ fontSize:"1.1rem", fontWeight:"bold", borderBottom:"2rem" ,color:"#fff", textShadow: "1.2px 1px 0.5px black"}}> Log In </span> </button> 
+
                               </form>
                             </div>
                             </>   
@@ -65,7 +69,7 @@ const LogIn = () => {
                           (
                             <>
                             <div className="cart-header-empty d-flex-column text-center" >
-                              <img src={success} alt="Purchase Successfull" style={{height:"200px", paddingTop:"2rem"}}/>
+                              <img src={success} alt="Login Successfull" style={{height:"200px", paddingTop:"2rem"}}/>
                               <h1 style={{paddingTop:"0.2rem", paddingBottom:"1rem", fontSize:"2.1rem", fontWeight:"bold", borderBottom:"2rem", color:"#000"}}>Login was successful!</h1>                            
                               <Link to={"/"} style={{textDecoration:'inherit', color:'inherit'}}>   
                                 <button className="text-center  px-auto" style={{all:"unset", marginTop:"1rem", cursor:"pointer", backgroundColor:"#F58A1F", width:"100px" , boxShadow: "0px 1px black", border:"0.06rem black solid"}}>

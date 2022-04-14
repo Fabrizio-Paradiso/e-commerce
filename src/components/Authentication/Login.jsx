@@ -13,7 +13,6 @@ const LogIn = () => {
         try {
             await login(dataForm.email, dataForm.password)
           } catch (error) {
-            console.log(error)
             setMessage('Wrong Credentials');
             setTimeout(() => setMessage(''), 1500);
           }

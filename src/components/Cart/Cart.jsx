@@ -68,9 +68,6 @@ export const Cart = () => {
                                                     <h1 style={{padding:"3rem 0 0 2.5rem", fontSize:"2.1rem", fontWeight:"bold", borderBottom:"2rem", color:"#F58A1F", textShadow: "1.2px 1px 0.5px gray"}}><img src={shop} alt="shop-bag" style={{height:"40px", paddingBottom:"0.4rem", paddingRight:"0.9rem"}}/>My purchase</h1>
                                                 <>
                                                     <CartList/>
-                                                    {/* {
-                                                        cartList.map( (item) => (<CartItem item={item} removeItemByID={removeItemByID} getSubtotalPrice={getSubtotalPrice} key={item.id}/>) )
-                                                    } */}
                                                 </>
                                                 </div>
                                                 <div className="cart-summary col-3 text-center d-flex flex-column align-items-center mx-auto" style={{ marginTop:"3rem"}}>

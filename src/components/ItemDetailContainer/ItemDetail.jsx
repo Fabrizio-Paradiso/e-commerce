@@ -36,7 +36,7 @@ export const ItemDetail = ({item}) => {
                 !clickAdd?
                   <div className='d-flex' style={{marginTop:"0.1rem"}}>
                     <ItemCount count={currentCart} availableStock = {item.stock} handleCount={setCurrentCart}/>
-                    <button className="text-center px-auto justify-content-start" style={{all:"unset", margin:"1.5rem 1rem 0 1rem", cursor:"pointer", backgroundColor:"#6AA303", width:"120px", height:"30px" , boxShadow: "0px 1px black", border:"0.06rem black solid"}} disabled={!currentCart} onClick={handleAddItem}>
+                    <button className="text-center px-auto justify-content-start" style={{all:"unset", margin:"1rem 1rem 0 1rem", cursor:"pointer", backgroundColor:"#6AA303", width:"120px", height:"30px" , boxShadow: "0px 1px black", border:"0.06rem black solid"}} disabled={!currentCart} onClick={handleAddItem}>
                       <span style={{fontSize:"1rem", fontWeight:"bold", borderBottom:"2rem" ,color:"#fff", textShadow: "1.2px 1px 0.5px black"}}>Add to cart <img src={addToCart} alt="shop-bag" style={{height:"20px"}} ></img></span>
                     </button>
                   </div>

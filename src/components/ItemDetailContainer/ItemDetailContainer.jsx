@@ -6,11 +6,10 @@ import { collection, getDocs, getFirestore} from "firebase/firestore"
 
 export const ItemDetailContainer = () => {
     const [item, setItem] = useState([])
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
     const { id } = useParams ()
   
     useEffect(() => {
-        setLoading(true)
         const db = getFirestore()
         let queryCollection = collection(db,'items')
         getDocs(queryCollection)

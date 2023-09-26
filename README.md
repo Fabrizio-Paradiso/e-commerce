@@ -1,4 +1,3 @@
-# Fabrizio Paradiso [LinkedIn Profile](https://www.linkedin.com/in/fabrizioparadiso/)
 # RosarioStore
 RosarioStore is a website that allows the Rosario community to acquire the best prices of the most relevant brands worldwide
 
@@ -6,18 +5,30 @@ RosarioStore is a website that allows the Rosario community to acquire the best 
 
 ![image](https://github.com/Fabrizio-Paradiso/e-commerce/blob/master/src/media/animation.gif)    
 
-### `npm install react-router-dom`
+## Requirements
 
-To allow the web application to implement dynamic routing
+### Node JS
 
-### `npm install react-bootstrap@next bootstrap@5.1.3`
+Previously to run the app, you have to install NodeJS, this could be done following the instruccions in this [link](https://nodejs.org/es).
 
-To use version 5.1.3 of the framework which is a great tool for web design
+### Dependencies
 
-### `npm install @chakra-ui/icons`
+Once you have installed NodeJS, to install all the related packages used in this project you have to run this command:
 
-To use a series of icons commonly used in web design provided by Chakra
+```shell
+npm ci
+```
 
-### `npm install @chakra-ui/react`
+## How to run
 
-To use the React components provided by Chakra that facilitate web design
+In the project directory, you can run:
+
+```shell
+npm run
+```
+
+This command will run the app in the development mode.
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
